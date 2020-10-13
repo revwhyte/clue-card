@@ -4,6 +4,7 @@ function doSomething() {
 }
 
 function setName(id) {
+    let taken = false
     let nome = prompt('Enter player\'s name')
     if(nome == '') {
         alert('name not informed')
@@ -11,11 +12,15 @@ function setName(id) {
     }
 
     let names = document.querySelectorAll('.pname').forEach(el => {
-        if(el.innerText == 1) {
+        if(el.innerText == nome) {
             alert('name already used')
-            return false
+            taken = true
         }
     })
+
+    if(taken) {
+        return false
+    }
 
     $(`#${id}`).text(nome)
 }
