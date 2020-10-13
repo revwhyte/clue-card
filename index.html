@@ -7,6 +7,7 @@
     <title>Clue Card Helper</title>
 </head>
 <body>
+    <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Clue Card</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +28,51 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Table Area -->
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Suspects</th>
+            <th class="pname" id="pn1" scope="col" onclick="setName(this.id)">_</th>
+            <th class="pname" id="pn2" scope="col" onclick="setName(this.id)">_</th>
+            <th class="pname" id="pn3" scope="col" onclick="setName(this.id)">_</th>
+            <th class="pname" id="pn4" scope="col" onclick="setName(this.id)">_</th>
+            <th class="pname" id="pn5" scope="col" onclick="setName(this.id)">_</th>
+            <th class="pname" id="pn6" scope="col" onclick="setName(this.id)">_</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+            <tr class="table-success">
+                <th scope="row">Success</th>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+            <tr class="table-danger">
+                <th scope="row">Danger</th>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+            <tr class="table-warning">
+                <th scope="row">Warning</th>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+            </tr>
+        </tbody>
+    </table> 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/database.js"></script>
