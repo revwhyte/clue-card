@@ -6,7 +6,7 @@ function doSomething() {
 function setName(id) {
     let taken = false
     let nome = prompt('Enter player\'s name')
-    if(nome == '') {
+    if(nome == null || nome.trim() == '') {
         alert('name not informed')
         return false
     }
@@ -23,4 +23,14 @@ function setName(id) {
     }
 
     $(`#${id}`).text(nome)
+}
+
+function changeTheme(id) {
+    let theme = id.split('_')[0]
+    applyTheme(theme)
+}
+
+function applyTheme(theme) {
+    let theme_obj = THEMES.filter(th => th.name == theme)
+    console.log(theme_obj)
 }

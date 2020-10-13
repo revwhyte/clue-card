@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/houserule.css">
     <title>Clue Card Helper</title>
 </head>
 <body>
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Clue Card</a>
+        <a class="navbar-brand nav-logo" href="#">
+            <img src="img/clue-logo.png" alt="Clue" class="img-responsive logo-navbar">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,13 +20,16 @@
         <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Classic</a>
+                    <a class="nav-link" id="classic_theme" onclick="changeTheme(this.id)" href="#">Classic</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Beach</a>
+                    <a class="nav-link" id="beach_theme" onclick="changeTheme(this.id)" href="#">Beach</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Museum</a>
+                    <a class="nav-link" id="museum_theme" onclick="changeTheme(this.id)" href="#">Museum</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="tips" href="#" data-toggle="modal" data-target="#modal_htu">How To Use</a>
                 </li>
             </ul>
         </div>
@@ -34,24 +40,51 @@
         <thead>
           <tr>
             <th scope="col">Suspects</th>
-            <th class="pname" id="pn1" scope="col" onclick="setName(this.id)">_</th>
-            <th class="pname" id="pn2" scope="col" onclick="setName(this.id)">_</th>
-            <th class="pname" id="pn3" scope="col" onclick="setName(this.id)">_</th>
-            <th class="pname" id="pn4" scope="col" onclick="setName(this.id)">_</th>
-            <th class="pname" id="pn5" scope="col" onclick="setName(this.id)">_</th>
-            <th class="pname" id="pn6" scope="col" onclick="setName(this.id)">_</th>
+            <th class="pname" id="pn1" scope="col" onclick="setName(this.id)">Player A</th>
+            <th class="pname" id="pn2" scope="col" onclick="setName(this.id)">Player B</th>
+            <th class="pname" id="pn3" scope="col" onclick="setName(this.id)">Player C</th>
+            <th class="pname" id="pn4" scope="col" onclick="setName(this.id)">Player D</th>
+            <th class="pname" id="pn5" scope="col" onclick="setName(this.id)">Player E</th>
+            <th class="pname" id="pn6" scope="col" onclick="setName(this.id)">Player F</th>
           </tr>
         </thead>
         <tbody>
-            
+            <!-- Suspects Area -->
             <tr class="table-success">
-                <th scope="row">Success</th>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
-                <td>X</td>
+                <th scope="row">Col. Mustard</th>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+            </tr>
+            <tr class="table-success">
+                <th scope="row">Prof. Plum</th>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+            </tr>
+            <tr class="table-success">
+                <th scope="row">Rev. Green</th>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+            </tr>
+            <tr class="table-success">
+                <th scope="row">Mrs. Peacock</th>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+            </tr>
+            <tr class="table-success">
+                <th scope="row">Miss Scarlett</th>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+            </tr>
+            <tr class="table-success">
+                <th scope="row">Mrs. White</th>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
+                <td>X</td><td>X</td>
             </tr>
             <tr class="table-danger">
                 <th scope="row">Danger</th>
@@ -72,7 +105,28 @@
                 <td>X</td>
             </tr>
         </tbody>
-    </table> 
+    </table>
+
+    <!-- Modal Area - How to Use -->
+    <div class="modal" id="modal_htu">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">How to Use Clue Card</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Use this table as your game info sheet, instead of wasting paper =)</p>
+                    <p>First of all, click on a "Player X" spot and rename with a player name.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/database.js"></script>

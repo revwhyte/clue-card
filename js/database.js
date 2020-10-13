@@ -1,4 +1,4 @@
-const card_styles = [
+const THEMES = [
     {
         name: 'beach',
         players: ['', '', '', '', '', ''],
